@@ -49,7 +49,7 @@ export default async function NewPropertyPage() {
     }
 
     const newProperty: Property = {
-      id: `prop-${Date.now()}`,
+      id: crypto.randomUUID(),
       ...data,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),

@@ -84,6 +84,9 @@ export interface ContactMessage {
 // ─── Helpers ──────────────────────────────────────────────
 
 function nanoid(): string {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
   return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 }
 
@@ -136,7 +139,7 @@ export async function readAuditLogs(): Promise<AuditLog[]> {
 
 export async function writeAuditLog(log: Omit<AuditLog, 'id' | 'created_at'>): Promise<void> {
   const newLog: AuditLog = {
-    id: `log-${nanoid()}`,
+    id: crypto.randomUUID(),
     ...log,
     created_at: new Date().toISOString(),
   };
@@ -235,7 +238,7 @@ export async function writeContactMessage(
   msg: Omit<ContactMessage, 'id' | 'created_at' | 'is_read'>
 ): Promise<ContactMessage> {
   const newMsg: ContactMessage = {
-    id: `msg-${nanoid()}`,
+    id: crypto.randomUUID(),
     ...msg,
     created_at: new Date().toISOString(),
     is_read: false,
