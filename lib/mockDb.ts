@@ -64,6 +64,9 @@ export interface SiteProfile {
   hari_operasional: string;
   akurasi_dimensi: number;
   maps_embed_url: string;
+  foto_lokasi_url: string;
+  map_lat: number;
+  map_lng: number;
   updated_at: string;
   updated_by: string;
 }
@@ -198,6 +201,9 @@ export async function readSiteProfile(): Promise<SiteProfile> {
       hari_operasional: 'Senin – Sabtu',
       akurasi_dimensi: 99,
       maps_embed_url: '',
+      foto_lokasi_url: '',
+      map_lat: 3.6377,
+      map_lng: 98.6947,
       updated_at: new Date().toISOString(),
       updated_by: 'system',
     };

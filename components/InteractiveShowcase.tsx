@@ -104,10 +104,32 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
 
             <h1 className="font-serif">
               <span className="block text-4xl sm:text-6xl xl:text-7xl font-black text-white leading-tight tracking-tight">
-                {siteProfile.tagline_baris1}
+                {siteProfile.tagline_baris1.split('').map((char, i) => (
+                  <span
+                    key={i}
+                    className="inline-block animate-fade-in-up"
+                    style={{
+                      animationDelay: `${i * 0.05}s`,
+                      animationFillMode: 'both',
+                    }}
+                  >
+                    {char === ' ' ? '\u00A0' : char}
+                  </span>
+                ))}
               </span>
               <span className="block text-4xl sm:text-6xl xl:text-7xl font-black leading-tight tracking-tight text-gold-gradient">
-                {siteProfile.tagline_baris2}
+                {siteProfile.tagline_baris2.split('').map((char, i) => (
+                  <span
+                    key={i}
+                    className="inline-block animate-fade-in-up"
+                    style={{
+                      animationDelay: `${0.5 + i * 0.05}s`,
+                      animationFillMode: 'both',
+                    }}
+                  >
+                    {char === ' ' ? '\u00A0' : char}
+                  </span>
+                ))}
               </span>
             </h1>
 

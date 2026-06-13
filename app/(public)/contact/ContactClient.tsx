@@ -1,8 +1,11 @@
 'use client';
 
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Toast from '@/components/Toast';
 import { SiteProfile } from '@/lib/mockDb';
+
+const LeafletMap = dynamic(() => import('@/components/LeafletMap'), { ssr: false });
 
 export default function ContactClient({ profile }: { profile: SiteProfile }) {
   const [formData, setFormData] = useState({
@@ -147,15 +150,27 @@ export default function ContactClient({ profile }: { profile: SiteProfile }) {
               </div>
             </div>
 
-            <div className="glass rounded-lg overflow-hidden border border-white/5 shadow-2xl h-80 relative group">
-              <iframe
-                title={`Lokasi Kantor ${profile.nama_perusahaan}`}
-                src={profile.maps_embed_url}
-                className="absolute inset-0 w-full h-full border-0 filter grayscale invert contrast-90 opacity-80 group-hover:opacity-100 group-hover:filter-none transition-all duration-700"
-                allowFullScreen={false}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              ></iframe>
+            <div className="glass rounded-lg overflow-hidden border border-white/5 shadow-2xl h-80 relative">
+              <LeafletMap
+                lat={profile.map_lat ?? 3.6377}
+                lng={profile.map_lng ?? 98.6947}
+                label={profile.nama_perusahaan}
+                mapsUrl={profile.maps_embed_url || undefined}
+              />
+              {/* Tombol buka maps di pojok kanan bawah */}
+              {profile.maps_embed_url && (
+                <a
+                  href={profile.maps_embed_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="absolute bottom-3 right-3 z-[1000] flex items-center gap-1.5 px-3 py-2 rounded-lg bg-[#C9A961] hover:bg-[#D5BD81] text-black font-black text-[10px] uppercase tracking-widest shadow-lg transition-all"
+                >
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+                  </svg>
+                  Google Maps
+                </a>
+              )}
             </div>
           </div>
 

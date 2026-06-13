@@ -85,29 +85,6 @@ export default function LoginForm({ action }: LoginFormProps) {
           {loading ? 'Menghubungkan...' : 'Masuk Portal Agent'}
         </button>
       </form>
-
-      {/* Helpful credentials reminder for tester */}
-      <div className="glass rounded p-5 border border-[#C9A961]/15 mt-3 flex flex-col gap-3">
-        <p className="text-[9px] text-[#C9A961] uppercase font-black tracking-widest text-center">Akun Uji Coba</p>
-        <div className="grid grid-cols-2 gap-4 text-[10px] text-gray-400">
-          <div className="border-r border-white/10 pr-2">
-            <p className="font-bold text-white flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#C9A961]" />
-              Superadmin
-            </p>
-            <p className="mt-1 text-[9px] truncate">superadmin@primeproperty.com</p>
-            <p className="text-[9px] mt-0.5 text-gray-500">Password: <span className="font-mono text-gray-300">super123</span></p>
-          </div>
-          <div className="pl-2">
-            <p className="font-bold text-white flex items-center gap-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
-              Admin biasa
-            </p>
-            <p className="mt-1 text-[9px] truncate">admin@primeproperty.com</p>
-            <p className="text-[9px] mt-0.5 text-gray-500">Password: <span className="font-mono text-gray-300">admin123</span></p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

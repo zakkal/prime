@@ -1,16 +1,34 @@
 'use client';
 
-import React, { useState, useEffect, useTransition } from 'react';
+import React, { useState, useTransition } from 'react';
 import { useRouter } from 'next/navigation';
 import { SiteProfile } from '@/lib/mockDb';
 import Toast from '@/components/Toast';
 import Link from 'next/link';
+
+// Extract lat/lng from a Google Maps URL string
+function extractCoordsFromUrl(url: string): { lat: number; lng: number } | null {
+  // Format: google.com/maps/@lat,lng or google.com/maps/place/.../@lat,lng
+  const atMatch = url.match(/@(-?\d+\.\d+),(-?\d+\.\d+)/);
+  if (atMatch) return { lat: parseFloat(atMatch[1]), lng: parseFloat(atMatch[2]) };
+
+  // Format: ?q=lat,lng
+  const qMatch = url.match(/[?&]q=(-?\d+\.\d+),(-?\d+\.\d+)/);
+  if (qMatch) return { lat: parseFloat(qMatch[1]), lng: parseFloat(qMatch[2]) };
+
+  // Format: /place/lat,lng
+  const placeMatch = url.match(/\/place\/(-?\d+\.\d+),(-?\d+\.\d+)/);
+  if (placeMatch) return { lat: parseFloat(placeMatch[1]), lng: parseFloat(placeMatch[2]) };
+
+  return null;
+}
 
 export default function SettingsClient({ initialProfile }: { initialProfile: SiteProfile }) {
   const router = useRouter();
   const [profile, setProfile] = useState<SiteProfile>(initialProfile);
   const [isPending, startTransition] = useTransition();
   const [isSaving, setIsSaving] = useState(false);
+  const [isResolvingMap, setIsResolvingMap] = useState(false);
   const [toast, setToast] = useState<{ message: string; type: 'success' | 'error' } | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -21,6 +39,40 @@ export default function SettingsClient({ initialProfile }: { initialProfile: Sit
     }));
   };
 
+  const handleMapsUrlChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const url = e.target.value;
+    setProfile(prev => ({ ...prev, maps_embed_url: url }));
+
+    if (!url.trim()) return;
+
+    // Try direct extraction first
+    const coords = extractCoordsFromUrl(url);
+    if (coords) {
+      setProfile(prev => ({ ...prev, maps_embed_url: url, map_lat: coords.lat, map_lng: coords.lng }));
+      setToast({ message: `Koordinat ditemukan: ${coords.lat}, ${coords.lng}`, type: 'success' });
+      return;
+    }
+
+    // For short links (maps.app.goo.gl), resolve via our API
+    if (url.includes('goo.gl') || url.includes('maps.app')) {
+      setIsResolvingMap(true);
+      try {
+        const res = await fetch(`/api/resolve-maps?url=${encodeURIComponent(url)}`);
+        const data = await res.json();
+        if (data.lat && data.lng) {
+          setProfile(prev => ({ ...prev, maps_embed_url: url, map_lat: data.lat, map_lng: data.lng }));
+          setToast({ message: `Koordinat ditemukan: ${data.lat}, ${data.lng}`, type: 'success' });
+        } else {
+          setToast({ message: 'Koordinat tidak ditemukan, isi manual.', type: 'error' });
+        }
+      } catch {
+        setToast({ message: 'Gagal resolve link. Isi koordinat manual.', type: 'error' });
+      } finally {
+        setIsResolvingMap(false);
+      }
+    }
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSaving(true);
@@ -28,9 +80,7 @@ export default function SettingsClient({ initialProfile }: { initialProfile: Sit
     try {
       const res = await fetch('/api/site-profile', {
         method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(profile),
       });
 
@@ -246,16 +296,47 @@ export default function SettingsClient({ initialProfile }: { initialProfile: Sit
               </div>
 
               <div className="flex flex-col gap-1">
-                <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">URL Google Maps Embed (iframe src link)</label>
-                <input
-                  type="text"
-                  name="maps_embed_url"
-                  value={profile.maps_embed_url}
-                  onChange={handleChange}
-                  required
-                  className="w-full text-xs border border-gray-300 rounded p-2.5 focus:ring-1 focus:ring-[#C9A961] focus:outline-none bg-white"
-                />
+                <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">URL Google Maps (paste link, koordinat otomatis terisi)</label>
+                <div className="relative">
+                  <input
+                    type="text"
+                    name="maps_embed_url"
+                    value={profile.maps_embed_url}
+                    onChange={handleMapsUrlChange}
+                    placeholder="https://maps.app.goo.gl/... atau google.com/maps/..."
+                    className="w-full text-xs border border-gray-300 rounded p-2.5 focus:ring-1 focus:ring-[#C9A961] focus:outline-none bg-white pr-8"
+                  />
+                  {isResolvingMap && (
+                    <div className="absolute right-2.5 top-1/2 -translate-y-1/2 w-3 h-3 border-2 border-[#C9A961] border-t-transparent rounded-full animate-spin" />
+                  )}
+                </div>
               </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex flex-col gap-1">
+                  <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Latitude (koordinat peta)</label>
+                  <input
+                    type="number"
+                    step="0.000001"
+                    name="map_lat"
+                    value={profile.map_lat ?? 3.6377}
+                    onChange={(e) => setProfile(prev => ({ ...prev, map_lat: parseFloat(parseFloat(e.target.value).toFixed(6)) }))}
+                    className="w-full text-xs border border-gray-300 rounded p-2.5 focus:ring-1 focus:ring-[#C9A961] focus:outline-none bg-white"
+                  />
+                </div>
+                <div className="flex flex-col gap-1">
+                  <label className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">Longitude (koordinat peta)</label>
+                  <input
+                    type="number"
+                    step="0.000001"
+                    name="map_lng"
+                    value={profile.map_lng ?? 98.6947}
+                    onChange={(e) => setProfile(prev => ({ ...prev, map_lng: parseFloat(parseFloat(e.target.value).toFixed(6)) }))}
+                    className="w-full text-xs border border-gray-300 rounded p-2.5 focus:ring-1 focus:ring-[#C9A961] focus:outline-none bg-white"
+                  />
+                </div>
+              </div>
+              <p className="text-[10px] text-gray-400">Cara cari koordinat: buka Google Maps → klik kanan lokasi → koordinat akan muncul (angka pertama = Latitude, angka kedua = Longitude)</p>
             </div>
 
             {/* Action Buttons */}

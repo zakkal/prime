@@ -114,8 +114,13 @@ export default function PropertyForm({ initialData, isEditMode = false, onSubmit
       newErrors.price = 'Harga harus berupa bilangan bulat rupiah positif yang valid.';
     }
 
-    if (formData.maps_link.trim() && !formData.maps_link.includes('google.com/maps')) {
-      newErrors.maps_link = 'Tautan harus berupa URL Google Maps yang valid (berisi domain google.com/maps).';
+    if (
+      formData.maps_link.trim() &&
+      !formData.maps_link.includes('google.com/maps') &&
+      !formData.maps_link.includes('maps.app.goo.gl') &&
+      !formData.maps_link.includes('goo.gl/maps')
+    ) {
+      newErrors.maps_link = 'Tautan harus berupa URL Google Maps yang valid.';
     }
 
     if (!formData.kawasan.trim()) {

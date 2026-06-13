@@ -9,8 +9,8 @@ export interface Agent {
 }
 
 const MOCK_AGENTS: Agent[] = [
-  { id: 'agent-1', email: 'superadmin@primeproperty.com', nama: 'Ahmad Syarif (Superadmin)', role: 'superadmin' },
-  { id: 'agent-2', email: 'admin@primeproperty.com', nama: 'Budi Hartono (Admin)', role: 'admin' }
+  { id: 'agent-1', email: 'superadmin@primeproperty.com', nama: 'Admin Utama', role: 'superadmin' },
+  { id: 'agent-2', email: 'admin@primeproperty.com', nama: 'Admin', role: 'admin' }
 ];
 
 const MOCK_PASSWORDS: Record<string, string> = {
