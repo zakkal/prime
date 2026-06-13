@@ -6,7 +6,7 @@ export const revalidate = 0;
 
 export default async function LandingPage() {
   const allProperties = await readProperties();
-  const activeProperties = allProperties.filter((p) => p.deleted_at === null);
+  const activeProperties = allProperties.filter((p) => !p.deleted_at);
   const siteProfile = await readSiteProfile();
 
   return (

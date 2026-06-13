@@ -96,6 +96,7 @@ export async function readProperties(): Promise<Property[]> {
   const { data, error } = await supabase
     .from('properties')
     .select('*')
+    .is('deleted_at', null)
     .order('created_at', { ascending: false });
 
   if (error) throw new Error(error.message);
