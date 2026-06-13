@@ -1,6 +1,7 @@
 import { readProperties, readSiteProfile } from '@/lib/mockDb';
 import InteractiveShowcase from '@/components/InteractiveShowcase';
 
+export const dynamic = 'force-dynamic';
 export const revalidate = 0;
 
 export default async function LandingPage() {
