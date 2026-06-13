@@ -4,8 +4,7 @@ import ContactClient from './ContactClient';
 
 export const revalidate = 0;
 
-export default function ContactPage() {
-  const profile = readSiteProfile();
-
+export default async function ContactPage() {
+  const profile = await readSiteProfile();
   return <ContactClient profile={profile} />;
 }

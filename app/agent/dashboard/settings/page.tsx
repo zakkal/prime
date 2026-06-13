@@ -12,12 +12,11 @@ export default async function SettingsPage() {
     redirect('/agent/login');
   }
 
-  // Only superadmin can edit landing profile (AC-5.2 / User requirements)
   if (agent.role !== 'superadmin') {
     redirect('/agent/dashboard');
   }
 
-  const profile = readSiteProfile();
+  const profile = await readSiteProfile();
 
   return <SettingsClient initialProfile={profile} />;
 }

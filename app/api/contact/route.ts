@@ -1,61 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
-import path from 'path';
 import nodemailer from 'nodemailer';
+import { checkContactRateLimit, writeContactMessage, readSiteProfile } from '@/lib/mockDb';
 
-const RATE_LIMIT_FILE = path.join(process.cwd(), 'data', 'contact_limits.json');
-
-// Nodemailer Transporter configuration using Gmail SMTP
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.GMAIL_USER, // Alamat email Gmail Anda
-    pass: process.env.GMAIL_APP_PASSWORD, // App Password Gmail Anda (16 digit kode)
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
-
-interface SubmitLog {
-  ip: string;
-  timestamp: number;
-}
 
 function getIp(req: NextRequest): string {
   const forwarded = req.headers.get('x-forwarded-for');
   if (forwarded) return forwarded.split(',')[0].trim();
   return '127.0.0.1';
-}
-
-function checkRateLimit(ip: string): boolean {
-  const dir = path.dirname(RATE_LIMIT_FILE);
-  if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
-  }
-
-  let logs: SubmitLog[] = [];
-  if (fs.existsSync(RATE_LIMIT_FILE)) {
-    try {
-      logs = JSON.parse(fs.readFileSync(RATE_LIMIT_FILE, 'utf-8'));
-    } catch (e) {
-      logs = [];
-    }
-  }
-
-  const oneHourAgo = Date.now() - 60 * 60 * 1000;
-  
-  // Filter out logs older than 1 hour
-  logs = logs.filter(l => l.timestamp > oneHourAgo);
-
-  // Count submissions from this IP
-  const ipLogsCount = logs.filter(l => l.ip === ip).length;
-
-  if (ipLogsCount >= 3) {
-    return false; // Limit exceeded
-  }
-
-  // Record new log
-  logs.push({ ip, timestamp: Date.now() });
-  fs.writeFileSync(RATE_LIMIT_FILE, JSON.stringify(logs, null, 2), 'utf-8');
-  return true;
 }
 
 export async function POST(req: NextRequest) {
@@ -64,20 +22,13 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { nama, email, hp, pesan } = body;
 
-    // 1. Validasi Input (AC-4.2)
     if (!nama || !email || !hp || !pesan) {
-      return NextResponse.json(
-        { error: 'Semua field formulir wajib diisi.' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Semua field formulir wajib diisi.' }, { status: 400 });
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: 'Format alamat email tidak valid.' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Format alamat email tidak valid.' }, { status: 400 });
     }
 
     if (hp.replace(/\D/g, '').length < 10) {
@@ -87,8 +38,8 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 2. Anti-spam Rate Limit (AC-4.2)
-    const allowed = checkRateLimit(ip);
+    // Rate limit check (Supabase-backed)
+    const allowed = await checkContactRateLimit(ip);
     if (!allowed) {
       return NextResponse.json(
         { error: 'Batas pengiriman terlampaui. Anda hanya dapat mengirim pesan maksimal 3 kali per jam.' },
@@ -96,25 +47,19 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Save message locally in JSON database
-    const { writeContactMessage, readSiteProfile } = require('@/lib/mockDb');
-    writeContactMessage({
-      nama,
-      email,
-      hp,
-      pesan,
-    });
+    // Save message to Supabase
+    await writeContactMessage({ nama, email, hp, pesan });
 
-    const profile = readSiteProfile();
+    const profile = await readSiteProfile();
 
-    // Mengirim email menggunakan Nodemailer (Gmail)
+    // Send email via Nodemailer
     try {
       if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
         await transporter.sendMail({
           from: `"${profile.nama_perusahaan}" <${process.env.GMAIL_USER}>`,
-          to: email, // Kirim konfirmasi terima kasih ke email pengirim (user)
-          cc: process.env.GMAIL_USER, // Kirim salinan pesan masuk ke email admin (Anda) agar Anda tahu ada pesan baru
-          replyTo: email, // Jika Anda membalas email tersebut di Gmail, otomatis membalas ke email si pengirim
+          to: email,
+          cc: process.env.GMAIL_USER,
+          replyTo: email,
           subject: `Pesan Baru dari Website: ${nama}`,
           html: `
             <div style="font-family: sans-serif; padding: 20px; color: #1a1a1a; max-width: 600px; margin: auto; border: 1px solid #eee; border-radius: 8px;">
@@ -139,14 +84,12 @@ export async function POST(req: NextRequest) {
             </div>
           `,
         });
-      } else {
-        console.warn("Nodemailer bypass: GMAIL_USER atau GMAIL_APP_PASSWORD belum diatur di .env.local");
       }
     } catch (err) {
-      console.error("Nodemailer error: Pengiriman email gagal:", err);
+      console.error('Nodemailer error:', err);
     }
 
-    return NextResponse.json({ success: true, message: 'Pesan berhasil disimpan secara lokal dan email diproses.' });
+    return NextResponse.json({ success: true, message: 'Pesan berhasil dikirim.' });
   } catch (e: any) {
     return NextResponse.json({ error: e.message || 'Terjadi kesalahan sistem.' }, { status: 500 });
   }

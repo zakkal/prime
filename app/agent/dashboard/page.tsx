@@ -1,7 +1,7 @@
 import React from 'react';
 import { getAuthenticatedAgent } from '@/lib/auth';
 import { redirect } from 'next/navigation';
-import { readProperties, writeProperties, writeAuditLog } from '@/lib/mockDb';
+import { readProperties, softDeleteProperty, writeAuditLog } from '@/lib/mockDb';
 import TableDashboard from '@/components/TableDashboard';
 import { revalidatePath } from 'next/cache';
 
@@ -13,37 +13,33 @@ export default async function DashboardPage() {
     redirect('/agent/login');
   }
 
-  // Fetch properties (soft deleted properties are excluded - AC-8.3)
-  const activeProperties = readProperties().filter((p) => p.deleted_at === null);
+  const allProperties = await readProperties();
+  const activeProperties = allProperties.filter((p) => p.deleted_at === null);
 
-  // Server Action for soft deleting (AC-8.3)
   const handleDeleteAction = async (id: string) => {
     'use server';
-    
-    // Authorization check in backend (AC-5.2)
+
     const agentCheck = await getAuthenticatedAgent();
     if (!agentCheck || agentCheck.role !== 'superadmin') {
       return { success: false, error: 'Akses ditolak (403 Forbidden). Hanya superadmin yang dapat menghapus properti.' };
     }
 
-    const properties = readProperties();
-    const index = properties.findIndex((p) => p.id === id);
-    
-    if (index === -1) {
+    const properties = await readProperties();
+    const prop = properties.find((p) => p.id === id);
+
+    if (!prop) {
       return { success: false, error: 'Properti tidak ditemukan.' };
     }
 
-    const propName = properties[index].nama_property;
-    properties[index].deleted_at = new Date().toISOString();
-    writeProperties(properties);
+    const deletedAt = new Date().toISOString();
+    await softDeleteProperty(id, deletedAt);
 
-    // Audit log (AC-8.2 / AC-8.3)
-    writeAuditLog({
+    await writeAuditLog({
       property_id: id,
-      property_name: propName,
+      property_name: prop.nama_property,
       action_type: 'DELETE',
       changed_by: agentCheck.nama,
-      changed_fields: JSON.stringify({ deleted_at: properties[index].deleted_at })
+      changed_fields: JSON.stringify({ deleted_at: deletedAt }),
     });
 
     revalidatePath('/agent/dashboard');
@@ -51,7 +47,6 @@ export default async function DashboardPage() {
     return { success: true };
   };
 
-  // Server Action: Bulk soft-delete (Superadmin only)
   const handleBulkDeleteAction = async (ids: string[]) => {
     'use server';
 
@@ -64,39 +59,35 @@ export default async function DashboardPage() {
       return { success: false, error: 'Tidak ada ID properti yang diberikan.' };
     }
 
-    const properties = readProperties();
-    let deletedCount = 0;
+    const properties = await readProperties();
     const now = new Date().toISOString();
+    let deletedCount = 0;
 
     for (const id of ids) {
-      const index = properties.findIndex((p) => p.id === id && p.deleted_at === null);
-      if (index !== -1) {
-        const propName = properties[index].nama_property;
-        properties[index].deleted_at = now;
-
-        writeAuditLog({
+      const prop = properties.find((p) => p.id === id && p.deleted_at === null);
+      if (prop) {
+        await softDeleteProperty(id, now);
+        await writeAuditLog({
           property_id: id,
-          property_name: propName,
+          property_name: prop.nama_property,
           action_type: 'DELETE',
           changed_by: agentCheck.nama,
-          changed_fields: JSON.stringify({ deleted_at: now, bulk: true })
+          changed_fields: JSON.stringify({ deleted_at: now, bulk: true }),
         });
-
         deletedCount++;
       }
     }
 
-    writeProperties(properties);
     revalidatePath('/agent/dashboard');
     revalidatePath('/');
     return { success: true, deletedCount };
   };
 
   return (
-    <TableDashboard 
-      initialProperties={activeProperties} 
-      role={agent.role} 
-      userName={agent.nama} 
+    <TableDashboard
+      initialProperties={activeProperties}
+      role={agent.role}
+      userName={agent.nama}
       onDeleteAction={handleDeleteAction}
       onBulkDeleteAction={handleBulkDeleteAction}
     />

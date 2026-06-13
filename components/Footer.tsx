@@ -3,8 +3,8 @@ import Link from 'next/link';
 import Logo from '@/components/Logo';
 import { readSiteProfile } from '@/lib/mockDb';
 
-export default function Footer() {
-  const profile = readSiteProfile();
+export default async function Footer() {
+  const profile = await readSiteProfile();
 
   return (
     <footer className="bg-[#0D0D0D] border-t border-white/5 relative overflow-hidden">

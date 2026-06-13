@@ -5,7 +5,7 @@ import { revalidatePath } from 'next/cache';
 
 export async function GET() {
   try {
-    const profile = readSiteProfile();
+    const profile = await readSiteProfile();
     return NextResponse.json(profile);
   } catch (e: any) {
     return NextResponse.json({ error: e.message }, { status: 500 });
@@ -24,7 +24,6 @@ export async function PUT(req: NextRequest) {
 
     const body = await req.json();
 
-    // Validate required fields
     const required = ['nama_perusahaan', 'alamat', 'telepon_display', 'whatsapp', 'whatsapp_display', 'email'];
     for (const field of required) {
       if (!body[field] || String(body[field]).trim() === '') {
@@ -32,7 +31,7 @@ export async function PUT(req: NextRequest) {
       }
     }
 
-    const current = readSiteProfile();
+    const current = await readSiteProfile();
     const updated: SiteProfile = {
       ...current,
       ...body,
@@ -41,7 +40,7 @@ export async function PUT(req: NextRequest) {
       updated_by: agent.nama,
     };
 
-    writeSiteProfile(updated);
+    await writeSiteProfile(updated);
 
     revalidatePath('/');
     revalidatePath('/contact');

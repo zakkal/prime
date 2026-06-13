@@ -22,8 +22,8 @@ const SESSION_COOKIE_NAME = 'prime_property_session';
 
 export async function loginAgent(email: string, password: string): Promise<{ success: boolean; error?: string; agent?: Agent }> {
   const normalizedEmail = email.toLowerCase();
-  const lockouts = readLockouts();
-  const state = lockouts[normalizedEmail] || { failedAttempts: 0, lockedUntil: null };
+  const lockouts = await readLockouts();
+  const state: LockoutState = lockouts[normalizedEmail] || { failedAttempts: 0, lockedUntil: null };
 
   // Check lockout status
   if (state.lockedUntil) {
@@ -36,11 +36,10 @@ export async function loginAgent(email: string, password: string): Promise<{ suc
         error: `Akun terkunci. Silakan coba lagi dalam ${minutesLeft} menit.`
       };
     } else {
-      // Lock expired
       state.lockedUntil = null;
       state.failedAttempts = 0;
       lockouts[normalizedEmail] = state;
-      writeLockouts(lockouts);
+      await writeLockouts(lockouts);
     }
   }
 
@@ -48,21 +47,19 @@ export async function loginAgent(email: string, password: string): Promise<{ suc
   const correctPassword = MOCK_PASSWORDS[normalizedEmail];
 
   if (!agent || correctPassword !== password) {
-    // Increment failures
     state.failedAttempts += 1;
     if (state.failedAttempts >= 5) {
-      // Lock for 15 minutes
       const lockedUntil = new Date(Date.now() + 15 * 60 * 1000).toISOString();
       state.lockedUntil = lockedUntil;
       lockouts[normalizedEmail] = state;
-      writeLockouts(lockouts);
+      await writeLockouts(lockouts);
       return {
         success: false,
         error: 'Terlalu banyak percobaan masuk yang gagal. Akun Anda dikunci selama 15 menit.'
       };
     } else {
       lockouts[normalizedEmail] = state;
-      writeLockouts(lockouts);
+      await writeLockouts(lockouts);
       const sisa = 5 - state.failedAttempts;
       return {
         success: false,
@@ -75,15 +72,14 @@ export async function loginAgent(email: string, password: string): Promise<{ suc
   state.failedAttempts = 0;
   state.lockedUntil = null;
   lockouts[normalizedEmail] = state;
-  writeLockouts(lockouts);
+  await writeLockouts(lockouts);
 
-  // Set session cookie (30 days, SameSite=Lax, httpOnly)
   const cookieStore = await cookies();
   cookieStore.set(SESSION_COOKIE_NAME, JSON.stringify(agent), {
     httpOnly: true,
     sameSite: 'lax',
     secure: process.env.NODE_ENV === 'production',
-    maxAge: 30 * 24 * 60 * 60, // 30 Days
+    maxAge: 30 * 24 * 60 * 60,
     path: '/'
   });
 

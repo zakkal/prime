@@ -5,27 +5,16 @@ import { formatRupiah } from '@/lib/utils';
 import { redirect } from 'next/navigation';
 import EmailForm from '@/components/EmailForm';
 
-// Mengaktifkan Static Generation untuk semua properti agar tidak ada loading render dari server
-export const dynamic = 'force-static';
-export const dynamicParams = true; // Tetap dukung fallback jika ada data baru
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;
 
 interface PageProps {
   params: Promise<{ id: string }>;
 }
 
-// Menghasilkan params secara statis saat build/startup agar navigasi instan
-export async function generateStaticParams() {
-  const allProperties = readProperties();
-  return allProperties
-    .filter((p) => p.deleted_at === null)
-    .map((p) => ({
-      id: p.id,
-    }));
-}
-
 export default async function PropertyDetailPage({ params }: PageProps) {
   const { id } = await params;
-  const allProperties = readProperties();
+  const allProperties = await readProperties();
   const property = allProperties.find((p) => p.id === id && p.deleted_at === null);
 
   // Jika properti tidak ditemukan atau di-soft-delete, kembalikan ke landing page
