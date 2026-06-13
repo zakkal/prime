@@ -53,7 +53,7 @@ export default async function NewPropertyPage() {
       ...data,
       created_at: new Date().toISOString(),
       updated_at: new Date().toISOString(),
-      created_by: agentCheck.id,
+      created_by: agentCheck.email,
       deleted_at: null,
     };
 
