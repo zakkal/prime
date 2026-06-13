@@ -1,0 +1,14 @@
+{
+  "adminprime@gmail.com": {
+    "failedAttempts": 4,
+    "lockedUntil": null
+  },
+  "superadmin@primeproperty.com": {
+    "failedAttempts": 5,
+    "lockedUntil": "2026-06-12T18:29:25.677Z"
+  },
+  "superadmin@primeproperty.co": {
+    "failedAttempts": 5,
+    "lockedUntil": "2026-06-12T18:26:11.071Z"
+  }
+}

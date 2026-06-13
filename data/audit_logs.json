@@ -1,0 +1,398 @@
+[
+  {
+    "id": "log-1781288920366-capv1aw5v",
+    "property_id": "prop-2",
+    "property_name": "Cemara Asri Heights Blok C-4",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.366Z"
+  },
+  {
+    "id": "log-1781288920360-kce6dg5d6",
+    "property_id": "prop-3",
+    "property_name": "Tembung Mansion Blok D-6",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.360Z"
+  },
+  {
+    "id": "log-1781288920357-9rahy7v4z",
+    "property_id": "prop-4",
+    "property_name": "Helvetia Townhouse Blok E-8",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.357Z"
+  },
+  {
+    "id": "log-1781288920352-rsg3cjebc",
+    "property_id": "prop-5",
+    "property_name": "Kuala Executive Blok F-10",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.352Z"
+  },
+  {
+    "id": "log-1781288920344-sb88aqfp8",
+    "property_id": "prop-8",
+    "property_name": "Cemara Asri Residence Blok C-16",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.344Z"
+  },
+  {
+    "id": "log-1781288920341-umz798cpy",
+    "property_id": "prop-9",
+    "property_name": "Tembung Villas Blok D-18",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.341Z"
+  },
+  {
+    "id": "log-1781288920337-949zz0sit",
+    "property_id": "prop-10",
+    "property_name": "Helvetia Heights Blok E-20",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.337Z"
+  },
+  {
+    "id": "log-1781288920329-lods54nms",
+    "property_id": "prop-11",
+    "property_name": "Kuala Mansion Blok F-22",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.329Z"
+  },
+  {
+    "id": "log-1781288920324-9hslmi5tl",
+    "property_id": "prop-12",
+    "property_name": "Krakatau Townhouse Blok A-24",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.324Z"
+  },
+  {
+    "id": "log-1781288920320-nbqwconzi",
+    "property_id": "prop-13",
+    "property_name": "Pancing Executive Blok B-26",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.320Z"
+  },
+  {
+    "id": "log-1781288920315-7k60esd76",
+    "property_id": "prop-14",
+    "property_name": "Cemara Asri Garden Blok C-28",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.315Z"
+  },
+  {
+    "id": "log-1781288920309-scefzdtm9",
+    "property_id": "prop-15",
+    "property_name": "Tembung Square Blok D-30",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.309Z"
+  },
+  {
+    "id": "log-1781288920306-49ea757nh",
+    "property_id": "prop-16",
+    "property_name": "Helvetia Residence Blok E-32",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.306Z"
+  },
+  {
+    "id": "log-1781288920302-zl712i32b",
+    "property_id": "prop-17",
+    "property_name": "Kuala Villas Blok F-34",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.302Z"
+  },
+  {
+    "id": "log-1781288920295-8nodw0dq8",
+    "property_id": "prop-18",
+    "property_name": "Krakatau Heights Blok A-36",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.295Z"
+  },
+  {
+    "id": "log-1781288920290-aqag5qbo1",
+    "property_id": "prop-19",
+    "property_name": "Pancing Mansion Blok B-38",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.290Z"
+  },
+  {
+    "id": "log-1781288920286-xs2v7l9kx",
+    "property_id": "prop-20",
+    "property_name": "Cemara Asri Townhouse Blok C-40",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.286Z"
+  },
+  {
+    "id": "log-1781288920276-7j4f2t8nj",
+    "property_id": "prop-21",
+    "property_name": "Tembung Executive Blok D-42",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.276Z"
+  },
+  {
+    "id": "log-1781288920270-x8i5167f9",
+    "property_id": "prop-22",
+    "property_name": "Helvetia Garden Blok E-44",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.270Z"
+  },
+  {
+    "id": "log-1781288920259-00u4sql5h",
+    "property_id": "prop-23",
+    "property_name": "Kuala Square Blok F-46",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.259Z"
+  },
+  {
+    "id": "log-1781288920245-pcz5xroyx",
+    "property_id": "prop-24",
+    "property_name": "Krakatau Residence Blok A-48",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.246Z"
+  },
+  {
+    "id": "log-1781288920241-f5nknr8lm",
+    "property_id": "prop-25",
+    "property_name": "Pancing Villas Blok B-50",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.241Z"
+  },
+  {
+    "id": "log-1781288920230-t0g7g7gdn",
+    "property_id": "prop-26",
+    "property_name": "Cemara Asri Heights Blok C-52",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.230Z"
+  },
+  {
+    "id": "log-1781288920225-wnwa0wdmr",
+    "property_id": "prop-27",
+    "property_name": "Tembung Mansion Blok D-54",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.225Z"
+  },
+  {
+    "id": "log-1781288920221-lsqr5qy6r",
+    "property_id": "prop-28",
+    "property_name": "Helvetia Townhouse Blok E-56",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.221Z"
+  },
+  {
+    "id": "log-1781288920211-lltozzrkk",
+    "property_id": "prop-29",
+    "property_name": "Kuala Executive Blok F-58",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.211Z"
+  },
+  {
+    "id": "log-1781288920207-efi60sc4b",
+    "property_id": "prop-30",
+    "property_name": "Krakatau Garden Blok A-60",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.207Z"
+  },
+  {
+    "id": "log-1781288920193-uhucub9hu",
+    "property_id": "prop-31",
+    "property_name": "Pancing Square Blok B-62",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.193Z"
+  },
+  {
+    "id": "log-1781288920188-iauresobm",
+    "property_id": "prop-32",
+    "property_name": "Cemara Asri Residence Blok C-64",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.188Z"
+  },
+  {
+    "id": "log-1781288920178-6e61v8lbc",
+    "property_id": "prop-33",
+    "property_name": "Tembung Villas Blok D-66",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.178Z"
+  },
+  {
+    "id": "log-1781288920173-35gzemyur",
+    "property_id": "prop-34",
+    "property_name": "Helvetia Heights Blok E-68",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.173Z"
+  },
+  {
+    "id": "log-1781288920162-53qkni26m",
+    "property_id": "prop-35",
+    "property_name": "Kuala Mansion Blok F-70",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.162Z"
+  },
+  {
+    "id": "log-1781288920158-j0rdlomym",
+    "property_id": "prop-36",
+    "property_name": "Krakatau Townhouse Blok A-72",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.158Z"
+  },
+  {
+    "id": "log-1781288920143-r1g82dy64",
+    "property_id": "prop-37",
+    "property_name": "Pancing Executive Blok B-74",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.143Z"
+  },
+  {
+    "id": "log-1781288920139-2c8c75l9e",
+    "property_id": "prop-38",
+    "property_name": "Cemara Asri Garden Blok C-76",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.139Z"
+  },
+  {
+    "id": "log-1781288920129-exx2xq11l",
+    "property_id": "prop-39",
+    "property_name": "Tembung Square Blok D-78",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.129Z"
+  },
+  {
+    "id": "log-1781288920125-57tdjqgal",
+    "property_id": "prop-40",
+    "property_name": "Helvetia Residence Blok E-80",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.125Z"
+  },
+  {
+    "id": "log-1781288920123-ght0hk910",
+    "property_id": "prop-41",
+    "property_name": "Kuala Villas Blok F-82",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.123Z"
+  },
+  {
+    "id": "log-1781288920113-dgwxafez2",
+    "property_id": "prop-42",
+    "property_name": "Krakatau Heights Blok A-84",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.113Z"
+  },
+  {
+    "id": "log-1781288920106-oacffav88",
+    "property_id": "prop-43",
+    "property_name": "Pancing Mansion Blok B-86",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:28:40.101Z\",\"bulk\":true}",
+    "created_at": "2026-06-12T18:28:40.106Z"
+  },
+  {
+    "id": "log-1781288269703-ukxfnv99g",
+    "property_id": "prop-48",
+    "property_name": "Krakatau Residence Blok A-96",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:17:49.695Z\"}",
+    "created_at": "2026-06-12T18:17:49.703Z"
+  },
+  {
+    "id": "log-1781288261805-l2dfr8fzm",
+    "property_id": "prop-46",
+    "property_name": "Helvetia Garden Blok E-92",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:17:41.799Z\"}",
+    "created_at": "2026-06-12T18:17:41.805Z"
+  },
+  {
+    "id": "log-1781287999514-ae45u2z7f",
+    "property_id": "prop-7",
+    "property_name": "Pancing Square Blok B-14",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:13:19.506Z\"}",
+    "created_at": "2026-06-12T18:13:19.514Z"
+  },
+  {
+    "id": "log-1781287991617-ry3o4707h",
+    "property_id": "prop-6",
+    "property_name": "Krakatau Garden Blok A-12",
+    "action_type": "DELETE",
+    "changed_by": "Ahmad Syarif (Superadmin)",
+    "changed_fields": "{\"deleted_at\":\"2026-06-12T18:13:11.586Z\"}",
+    "created_at": "2026-06-12T18:13:11.617Z"
+  }
+]

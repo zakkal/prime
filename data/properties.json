@@ -1,0 +1,1395 @@
+[
+  {
+    "id": "prop-1",
+    "nama_property": "Pancing Villas Blok B-2",
+    "group": "Permai 123",
+    "lebar": 4.75,
+    "panjang": 12,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 820000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.61,98.61",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-04-06T12:30:27.124Z",
+    "updated_at": "2026-04-06T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-2",
+    "nama_property": "Cemara Asri Heights Blok C-4",
+    "group": "Project Ville",
+    "lebar": 5,
+    "panjang": 14,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 1040000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.62,98.61999999999999",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-04-07T12:30:27.125Z",
+    "updated_at": "2026-04-07T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-3",
+    "nama_property": "Tembung Mansion Blok D-6",
+    "group": "Nirwana",
+    "lebar": 5.75,
+    "panjang": 16,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 810000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.63,98.63",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": null,
+    "created_at": "2026-04-08T12:30:27.125Z",
+    "updated_at": "2026-04-08T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-4",
+    "nama_property": "Helvetia Townhouse Blok E-8",
+    "group": "Citra Core",
+    "lebar": 6,
+    "panjang": 18,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 1030000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.64,98.64",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": null,
+    "created_at": "2026-04-09T12:30:27.125Z",
+    "updated_at": "2026-04-09T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-5",
+    "nama_property": "Kuala Executive Blok F-10",
+    "group": null,
+    "lebar": 4.25,
+    "panjang": 20,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 1250000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.65,98.64999999999999",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-04-10T12:30:27.125Z",
+    "updated_at": "2026-04-10T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-6",
+    "nama_property": "Krakatau Garden Blok A-12",
+    "group": "Mentari",
+    "lebar": 4.5,
+    "panjang": 22,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 1020000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.66,98.66",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-04-11T12:30:27.125Z",
+    "updated_at": "2026-04-11T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:13:11.586Z"
+  },
+  {
+    "id": "prop-7",
+    "nama_property": "Pancing Square Blok B-14",
+    "group": "Permai 123",
+    "lebar": 5.25,
+    "panjang": 24,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 1240000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.67,98.66999999999999",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-04-12T12:30:27.125Z",
+    "updated_at": "2026-04-12T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:13:19.506Z"
+  },
+  {
+    "id": "prop-8",
+    "nama_property": "Cemara Asri Residence Blok C-16",
+    "group": "Project Ville",
+    "lebar": 5.5,
+    "panjang": 10,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 1460000000,
+    "carport": true,
+    "status": "sold_out",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.68,98.67999999999999",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": null,
+    "created_at": "2026-04-13T12:30:27.125Z",
+    "updated_at": "2026-04-13T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-9",
+    "nama_property": "Tembung Villas Blok D-18",
+    "group": "Nirwana",
+    "lebar": 6.25,
+    "panjang": 12,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 1230000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.69,98.69",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": null,
+    "created_at": "2026-04-14T12:30:27.125Z",
+    "updated_at": "2026-04-14T12:30:27.125Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-10",
+    "nama_property": "Helvetia Heights Blok E-20",
+    "group": "Citra Core",
+    "lebar": 4,
+    "panjang": 14,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 1450000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.7,98.69999999999999",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-04-15T12:30:27.126Z",
+    "updated_at": "2026-04-15T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-11",
+    "nama_property": "Kuala Mansion Blok F-22",
+    "group": null,
+    "lebar": 4.75,
+    "panjang": 16,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 1670000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.71,98.71",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-04-16T12:30:27.126Z",
+    "updated_at": "2026-04-16T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-12",
+    "nama_property": "Krakatau Townhouse Blok A-24",
+    "group": "Mentari",
+    "lebar": 5,
+    "panjang": 18,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 1440000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.72,98.72",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-04-17T12:30:27.126Z",
+    "updated_at": "2026-04-17T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-13",
+    "nama_property": "Pancing Executive Blok B-26",
+    "group": "Permai 123",
+    "lebar": 5.75,
+    "panjang": 20,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 1660000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.73,98.72999999999999",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": null,
+    "created_at": "2026-04-18T12:30:27.126Z",
+    "updated_at": "2026-04-18T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-14",
+    "nama_property": "Cemara Asri Garden Blok C-28",
+    "group": "Project Ville",
+    "lebar": 6,
+    "panjang": 22,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 1880000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.74,98.74",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": null,
+    "created_at": "2026-04-19T12:30:27.126Z",
+    "updated_at": "2026-04-19T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-15",
+    "nama_property": "Tembung Square Blok D-30",
+    "group": "Nirwana",
+    "lebar": 4.25,
+    "panjang": 24,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 1650000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.75,98.75",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-04-20T12:30:27.126Z",
+    "updated_at": "2026-04-20T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-16",
+    "nama_property": "Helvetia Residence Blok E-32",
+    "group": "Citra Core",
+    "lebar": 4.5,
+    "panjang": 10,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 1870000000,
+    "carport": true,
+    "status": "sold_out",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.7600000000000002,98.75999999999999",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-04-21T12:30:27.126Z",
+    "updated_at": "2026-04-21T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-17",
+    "nama_property": "Kuala Villas Blok F-34",
+    "group": null,
+    "lebar": 5.25,
+    "panjang": 12,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 2090000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.77,98.77",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-04-22T12:30:27.126Z",
+    "updated_at": "2026-04-22T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-18",
+    "nama_property": "Krakatau Heights Blok A-36",
+    "group": "Mentari",
+    "lebar": 5.5,
+    "panjang": 14,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 1860000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.7800000000000002,98.78",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": null,
+    "created_at": "2026-04-23T12:30:27.126Z",
+    "updated_at": "2026-04-23T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-19",
+    "nama_property": "Pancing Mansion Blok B-38",
+    "group": "Permai 123",
+    "lebar": 6.25,
+    "panjang": 16,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 2080000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.79,98.78999999999999",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": null,
+    "created_at": "2026-04-24T12:30:27.126Z",
+    "updated_at": "2026-04-24T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-20",
+    "nama_property": "Cemara Asri Townhouse Blok C-40",
+    "group": "Project Ville",
+    "lebar": 4,
+    "panjang": 18,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 2300000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.8000000000000003,98.8",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-04-25T12:30:27.126Z",
+    "updated_at": "2026-04-25T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-21",
+    "nama_property": "Tembung Executive Blok D-42",
+    "group": "Nirwana",
+    "lebar": 4.75,
+    "panjang": 20,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 2070000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.81,98.80999999999999",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-04-26T12:30:27.126Z",
+    "updated_at": "2026-04-26T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-22",
+    "nama_property": "Helvetia Garden Blok E-44",
+    "group": "Citra Core",
+    "lebar": 5,
+    "panjang": 22,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 2290000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.8200000000000003,98.82",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-04-27T12:30:27.126Z",
+    "updated_at": "2026-04-27T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-23",
+    "nama_property": "Kuala Square Blok F-46",
+    "group": null,
+    "lebar": 5.75,
+    "panjang": 24,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 2510000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.83,98.83",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": null,
+    "created_at": "2026-04-28T12:30:27.126Z",
+    "updated_at": "2026-04-28T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-24",
+    "nama_property": "Krakatau Residence Blok A-48",
+    "group": "Mentari",
+    "lebar": 6,
+    "panjang": 10,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 2280000000,
+    "carport": true,
+    "status": "sold_out",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.84,98.83999999999999",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": null,
+    "created_at": "2026-04-29T12:30:27.126Z",
+    "updated_at": "2026-04-29T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-25",
+    "nama_property": "Pancing Villas Blok B-50",
+    "group": "Permai 123",
+    "lebar": 4.25,
+    "panjang": 12,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 2500000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.85,98.85",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-04-30T12:30:27.126Z",
+    "updated_at": "2026-04-30T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-26",
+    "nama_property": "Cemara Asri Heights Blok C-52",
+    "group": "Project Ville",
+    "lebar": 4.5,
+    "panjang": 14,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 2720000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.8600000000000003,98.86",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-05-01T12:30:27.126Z",
+    "updated_at": "2026-05-01T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-27",
+    "nama_property": "Tembung Mansion Blok D-54",
+    "group": "Nirwana",
+    "lebar": 5.25,
+    "panjang": 16,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 2490000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.87,98.86999999999999",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-05-02T12:30:27.126Z",
+    "updated_at": "2026-05-02T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-28",
+    "nama_property": "Helvetia Townhouse Blok E-56",
+    "group": "Citra Core",
+    "lebar": 5.5,
+    "panjang": 18,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 2710000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.88,98.88",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": null,
+    "created_at": "2026-05-03T12:30:27.126Z",
+    "updated_at": "2026-05-03T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-29",
+    "nama_property": "Kuala Executive Blok F-58",
+    "group": null,
+    "lebar": 6.25,
+    "panjang": 20,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 2930000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.89,98.89",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": null,
+    "created_at": "2026-05-04T12:30:27.126Z",
+    "updated_at": "2026-05-04T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-30",
+    "nama_property": "Krakatau Garden Blok A-60",
+    "group": "Mentari",
+    "lebar": 4,
+    "panjang": 22,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 2700000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.9,98.89999999999999",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-05-05T12:30:27.126Z",
+    "updated_at": "2026-05-05T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-31",
+    "nama_property": "Pancing Square Blok B-62",
+    "group": "Permai 123",
+    "lebar": 4.75,
+    "panjang": 24,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 2920000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.91,98.91",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-05-06T12:30:27.126Z",
+    "updated_at": "2026-05-06T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-32",
+    "nama_property": "Cemara Asri Residence Blok C-64",
+    "group": "Project Ville",
+    "lebar": 5,
+    "panjang": 10,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 3140000000,
+    "carport": true,
+    "status": "sold_out",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.92,98.91999999999999",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-05-07T12:30:27.126Z",
+    "updated_at": "2026-05-07T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-33",
+    "nama_property": "Tembung Villas Blok D-66",
+    "group": "Nirwana",
+    "lebar": 5.75,
+    "panjang": 12,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 2910000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.93,98.92999999999999",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": null,
+    "created_at": "2026-05-08T12:30:27.126Z",
+    "updated_at": "2026-05-08T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-34",
+    "nama_property": "Helvetia Heights Blok E-68",
+    "group": "Citra Core",
+    "lebar": 6,
+    "panjang": 14,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 3130000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.94,98.94",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": null,
+    "created_at": "2026-05-09T12:30:27.126Z",
+    "updated_at": "2026-05-09T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-35",
+    "nama_property": "Kuala Mansion Blok F-70",
+    "group": null,
+    "lebar": 4.25,
+    "panjang": 16,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 3350000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.95,98.94999999999999",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-05-10T12:30:27.126Z",
+    "updated_at": "2026-05-10T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-36",
+    "nama_property": "Krakatau Townhouse Blok A-72",
+    "group": "Mentari",
+    "lebar": 4.5,
+    "panjang": 18,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 3120000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.96,98.96",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-05-11T12:30:27.126Z",
+    "updated_at": "2026-05-11T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-37",
+    "nama_property": "Pancing Executive Blok B-74",
+    "group": "Permai 123",
+    "lebar": 5.25,
+    "panjang": 20,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 3340000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=3.97,98.97",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-05-12T12:30:27.126Z",
+    "updated_at": "2026-05-12T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-38",
+    "nama_property": "Cemara Asri Garden Blok C-76",
+    "group": "Project Ville",
+    "lebar": 5.5,
+    "panjang": 22,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 3560000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=3.98,98.97999999999999",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": null,
+    "created_at": "2026-05-13T12:30:27.126Z",
+    "updated_at": "2026-05-13T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-39",
+    "nama_property": "Tembung Square Blok D-78",
+    "group": "Nirwana",
+    "lebar": 6.25,
+    "panjang": 24,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 3330000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=3.99,98.99",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": null,
+    "created_at": "2026-05-14T12:30:27.126Z",
+    "updated_at": "2026-05-14T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-40",
+    "nama_property": "Helvetia Residence Blok E-80",
+    "group": "Citra Core",
+    "lebar": 4,
+    "panjang": 10,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 3550000000,
+    "carport": true,
+    "status": "sold_out",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=4,99",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-05-15T12:30:27.126Z",
+    "updated_at": "2026-05-15T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-41",
+    "nama_property": "Kuala Villas Blok F-82",
+    "group": null,
+    "lebar": 4.75,
+    "panjang": 12,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 3770000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=4.01,99.00999999999999",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-05-16T12:30:27.126Z",
+    "updated_at": "2026-05-16T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-42",
+    "nama_property": "Krakatau Heights Blok A-84",
+    "group": "Mentari",
+    "lebar": 5,
+    "panjang": 14,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 3540000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=4.0200000000000005,99.02",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-05-17T12:30:27.126Z",
+    "updated_at": "2026-05-17T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-43",
+    "nama_property": "Pancing Mansion Blok B-86",
+    "group": "Permai 123",
+    "lebar": 5.75,
+    "panjang": 16,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 3760000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=4.03,99.03",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": null,
+    "created_at": "2026-05-18T12:30:27.126Z",
+    "updated_at": "2026-05-18T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:28:40.101Z"
+  },
+  {
+    "id": "prop-44",
+    "nama_property": "Cemara Asri Townhouse Blok C-88",
+    "group": "Project Ville",
+    "lebar": 6,
+    "panjang": 18,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 3980000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=4.04,99.03999999999999",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": null,
+    "created_at": "2026-05-19T12:30:27.126Z",
+    "updated_at": "2026-05-19T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-45",
+    "nama_property": "Tembung Executive Blok D-90",
+    "group": "Nirwana",
+    "lebar": 4.25,
+    "panjang": 20,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 3750000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=4.05,99.05",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-05-20T12:30:27.126Z",
+    "updated_at": "2026-05-20T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-46",
+    "nama_property": "Helvetia Garden Blok E-92",
+    "group": "Citra Core",
+    "lebar": 4.5,
+    "panjang": 22,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 3970000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=4.0600000000000005,99.05999999999999",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-05-21T12:30:27.126Z",
+    "updated_at": "2026-05-21T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:17:41.799Z"
+  },
+  {
+    "id": "prop-47",
+    "nama_property": "Kuala Square Blok F-94",
+    "group": null,
+    "lebar": 5.25,
+    "panjang": 24,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 4190000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=4.07,99.07",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-05-22T12:30:27.126Z",
+    "updated_at": "2026-05-22T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-48",
+    "nama_property": "Krakatau Residence Blok A-96",
+    "group": "Mentari",
+    "lebar": 5.5,
+    "panjang": 10,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 3960000000,
+    "carport": true,
+    "status": "sold_out",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=4.08,99.08",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": null,
+    "created_at": "2026-05-23T12:30:27.126Z",
+    "updated_at": "2026-05-23T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": "2026-06-12T18:17:49.695Z"
+  },
+  {
+    "id": "prop-49",
+    "nama_property": "Pancing Villas Blok B-98",
+    "group": "Permai 123",
+    "lebar": 6.25,
+    "panjang": 12,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 4180000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=4.09,99.08999999999999",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": null,
+    "created_at": "2026-05-24T12:30:27.126Z",
+    "updated_at": "2026-05-24T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-50",
+    "nama_property": "Cemara Asri Heights Blok C-100",
+    "group": "Project Ville",
+    "lebar": 4,
+    "panjang": 14,
+    "hadap": [
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3.5,
+    "price": 4400000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=4.1,99.1",
+    "kawasan": [
+      "Cemara Asri"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-05-25T12:30:27.126Z",
+    "updated_at": "2026-05-25T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-51",
+    "nama_property": "Tembung Mansion Blok D-102",
+    "group": "Nirwana",
+    "lebar": 4.75,
+    "panjang": 16,
+    "hadap": [
+      "Barat"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1,
+    "price": 4170000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=4.11,99.11",
+    "kawasan": [
+      "Tembung"
+    ],
+    "unit": "Gate siap",
+    "created_at": "2026-05-26T12:30:27.126Z",
+    "updated_at": "2026-05-26T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-52",
+    "nama_property": "Helvetia Townhouse Blok E-104",
+    "group": "Citra Core",
+    "lebar": 5,
+    "panjang": 18,
+    "hadap": [
+      "Utara",
+      "Timur"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2.5,
+    "price": 4390000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=4.12,99.11999999999999",
+    "kawasan": [
+      "Helvetia"
+    ],
+    "unit": "Rucon",
+    "created_at": "2026-05-27T12:30:27.126Z",
+    "updated_at": "2026-05-27T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-53",
+    "nama_property": "Kuala Executive Blok F-106",
+    "group": null,
+    "lebar": 5.75,
+    "panjang": 20,
+    "hadap": [
+      "Selatan",
+      "Barat"
+    ],
+    "tipe": "Villa",
+    "tingkat": 3,
+    "price": 4610000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_huni_renovasi",
+    "maps_link": "https://google.com/maps?q=4.13,99.13",
+    "kawasan": [
+      "Kuala"
+    ],
+    "unit": null,
+    "created_at": "2026-05-28T12:30:27.126Z",
+    "updated_at": "2026-05-28T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-54",
+    "nama_property": "Krakatau Garden Blok A-108",
+    "group": "Mentari",
+    "lebar": 6,
+    "panjang": 22,
+    "hadap": [
+      "Utara"
+    ],
+    "tipe": "Ruko",
+    "tingkat": 1.5,
+    "price": 4380000000,
+    "carport": true,
+    "status": "in_stock",
+    "siap": "siap_huni",
+    "maps_link": "https://google.com/maps?q=4.140000000000001,99.14",
+    "kawasan": [
+      "Krakatau"
+    ],
+    "unit": null,
+    "created_at": "2026-05-29T12:30:27.126Z",
+    "updated_at": "2026-05-29T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  },
+  {
+    "id": "prop-55",
+    "nama_property": "Pancing Square Blok B-110",
+    "group": "Permai 123",
+    "lebar": 4.25,
+    "panjang": 24,
+    "hadap": [
+      "Selatan"
+    ],
+    "tipe": "Villa",
+    "tingkat": 2,
+    "price": 4600000000,
+    "carport": false,
+    "status": "in_stock",
+    "siap": "siap_kosong",
+    "maps_link": "https://google.com/maps?q=4.15,99.14999999999999",
+    "kawasan": [
+      "Pancing"
+    ],
+    "unit": "Ready Siap huni",
+    "created_at": "2026-05-30T12:30:27.126Z",
+    "updated_at": "2026-05-30T12:30:27.126Z",
+    "created_by": "superadmin-id",
+    "deleted_at": null
+  }
+]
