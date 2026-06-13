@@ -1,10 +1,19 @@
 -- ============================================================
--- PRIME PROPERTY - Supabase Migration
--- Jalankan ini di Supabase Dashboard > SQL Editor
+-- PRIME PROPERTY - Supabase Migration (v2 - fixed types)
+-- 1. Drop semua tabel lama dulu
+-- 2. Buat ulang dengan tipe yang benar
 -- ============================================================
 
+drop table if exists contact_limits cascade;
+drop table if exists contact_messages cascade;
+drop table if exists audit_logs cascade;
+drop table if exists lockouts cascade;
+drop table if exists site_profile cascade;
+drop table if exists properties cascade;
+drop table if exists agent_profiles cascade;
+
 -- 1. Properties
-create table if not exists properties (
+create table properties (
   id text primary key,
   nama_property text not null,
   "group" text,
@@ -13,7 +22,7 @@ create table if not exists properties (
   hadap text[] not null default '{}',
   tipe text not null check (tipe in ('Ruko', 'Villa')),
   tingkat numeric not null,
-  price numeric not null,
+  price bigint not null,
   carport boolean not null default false,
   status text not null check (status in ('in_stock', 'sold_out')),
   siap text not null check (siap in ('siap_huni', 'siap_kosong', 'siap_huni_renovasi')),
@@ -27,7 +36,7 @@ create table if not exists properties (
 );
 
 -- 2. Audit Logs
-create table if not exists audit_logs (
+create table audit_logs (
   id text primary key,
   property_id text not null,
   property_name text not null,
@@ -38,14 +47,14 @@ create table if not exists audit_logs (
 );
 
 -- 3. Lockout
-create table if not exists lockouts (
+create table lockouts (
   email text primary key,
   failed_attempts integer not null default 0,
   locked_until timestamptz
 );
 
 -- 4. Site Profile
-create table if not exists site_profile (
+create table site_profile (
   id integer primary key default 1,
   nama_perusahaan text not null,
   tagline_baris1 text not null,
@@ -60,13 +69,16 @@ create table if not exists site_profile (
   jam_operasional text not null,
   hari_operasional text not null,
   akurasi_dimensi numeric not null default 99,
-  maps_embed_url text not null,
+  maps_embed_url text not null default '',
+  foto_lokasi_url text not null default '',
+  map_lat numeric not null default 3.6377,
+  map_lng numeric not null default 98.6947,
   updated_at timestamptz not null default now(),
   updated_by text not null default 'system'
 );
 
 -- 5. Contact Messages
-create table if not exists contact_messages (
+create table contact_messages (
   id text primary key,
   nama text not null,
   email text not null,
@@ -77,18 +89,19 @@ create table if not exists contact_messages (
 );
 
 -- 6. Contact Rate Limits
-create table if not exists contact_limits (
+create table contact_limits (
   ip text not null,
   submitted_at timestamptz not null default now()
 );
-create index if not exists contact_limits_ip_idx on contact_limits(ip);
-create index if not exists contact_limits_time_idx on contact_limits(submitted_at);
+create index contact_limits_ip_idx on contact_limits(ip);
+create index contact_limits_time_idx on contact_limits(submitted_at);
 
--- 7. Seed default site_profile (insert only if empty)
+-- 7. Seed default site_profile
 insert into site_profile (
   id, nama_perusahaan, tagline_baris1, tagline_baris2, deskripsi_hero,
   alamat, telepon, telepon_display, whatsapp, whatsapp_display,
-  email, jam_operasional, hari_operasional, akurasi_dimensi, maps_embed_url,
+  email, jam_operasional, hari_operasional, akurasi_dimensi,
+  maps_embed_url, foto_lokasi_url, map_lat, map_lng,
   updated_at, updated_by
 ) values (
   1,
@@ -105,12 +118,15 @@ insert into site_profile (
   '08.00 – 17.00 WIB',
   'Senin – Sabtu',
   99,
-  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3981.9790695029053!2d98.69469507604558!3d3.6377626963363363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30313220fbf7774d%3A0x303131804a9d701b!2sKawasan%20Cemara%20Asri!5e0!3m2!1sid!2sid!4v1717326880000!5m2!1sid!2sid',
+  '',
+  '',
+  3.6377,
+  98.6947,
   now(),
   'system'
-) on conflict (id) do nothing;
+);
 
--- 8. Disable RLS (pakai anon key dari server, bukan user auth)
+-- 8. Disable RLS
 alter table properties disable row level security;
 alter table audit_logs disable row level security;
 alter table lockouts disable row level security;
