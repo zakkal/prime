@@ -36,7 +36,7 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
   const [selectedType, setSelectedType] = useState<string>('All');
   const [selectedKawasan, setSelectedKawasan] = useState<string>('All');
   const [selectedSiap, setSelectedSiap] = useState<string>('All');
-  const [priceRange, setPriceRange] = useState<number>(5000000000); // 5 Billion max default
+  const [priceRange, setPriceRange] = useState<number>(999000000000); // 999 Billion max default
 
   // Extract unique Kawasan lists for filtering
   const kawasanList = useMemo(() => {
