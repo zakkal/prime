@@ -38,19 +38,31 @@ export default async function LoginPage() {
 
       <div className="w-full max-w-md glass-card rounded-lg border border-[#C9A961]/20 p-10 relative z-10 flex flex-col gap-8 shadow-2xl">
         {/* Brand Header */}
-        <div className="flex flex-col items-center gap-3 text-center">
+        <div className="flex flex-col items-center gap-4 text-center">
+          {/* Logo box — gold gradient square with black P */}
           <div className="relative group">
-            <div className="bg-gradient-to-br from-[#A8893E] via-[#C9A961] to-[#E2C785] text-black font-black h-12 w-12 rounded flex items-center justify-center text-xl shadow-lg transition-transform group-hover:scale-105">
-              P
+            <div className="relative h-20 w-20 rounded-2xl shadow-2xl overflow-hidden transition-transform group-hover:scale-105"
+              style={{ background: 'linear-gradient(145deg, #E2C785 0%, #C9A961 40%, #A8893E 100%)' }}
+            >
+              {/* Inner glow top */}
+              <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-transparent rounded-2xl" />
+              <span className="absolute inset-0 flex items-center justify-center font-black text-4xl text-[#1A1A1A] tracking-tight select-none"
+                style={{ fontFamily: 'Arial Black, Impact, sans-serif' }}
+              >P</span>
             </div>
-            <div className="absolute inset-0 bg-[#C9A961]/25 rounded blur-md -z-10 group-hover:blur-lg" />
+            {/* Outer glow */}
+            <div className="absolute inset-0 bg-[#C9A961]/30 rounded-2xl blur-xl -z-10 group-hover:blur-2xl transition-all" />
           </div>
-          
-          <h1 className="text-xl font-extrabold tracking-[0.2em] text-white uppercase mt-2">
-            PRIME <span className="text-gold-gradient">PORTAL</span>
-          </h1>
-          <div className="h-px w-16 divider-gold opacity-35" />
-          <p className="text-[9px] text-[#C9A961] font-black uppercase tracking-[0.25em]">Internal Agent Portal</p>
+
+          {/* PRIME PORTAL text */}
+          <div className="flex flex-col items-center gap-1.5">
+            <h1 className="text-2xl font-black tracking-[0.25em] uppercase">
+              <span className="text-white">PRIME </span>
+              <span className="text-gold-gradient">PORTAL</span>
+            </h1>
+            <div className="h-px w-20 divider-gold opacity-40" />
+            <p className="text-[9px] text-[#C9A961] font-black uppercase tracking-[0.3em] mt-1">Internal Agent Portal</p>
+          </div>
         </div>
 
         {/* Form Client Wrapper */}
