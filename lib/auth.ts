@@ -20,8 +20,30 @@ const MOCK_PASSWORDS: Record<string, string> = {
 
 const SESSION_COOKIE_NAME = 'prime_property_session';
 
-export async function loginAgent(email: string, password: string): Promise<{ success: boolean; error?: string; agent?: Agent }> {
+export async function loginAgent(email: string, password: string, ip?: string): Promise<{ success: boolean; error?: string; agent?: Agent }> {
   const normalizedEmail = email.toLowerCase();
+
+  // ── IP-based lockout (protects against DoS on email accounts) ──
+  if (ip) {
+    const ipKey = `ip:${ip}`;
+    const ipLockouts = await readLockouts();
+    const ipState = ipLockouts[ipKey] || { failedAttempts: 0, lockedUntil: null };
+
+    if (ipState.lockedUntil) {
+      const lockTime = new Date(ipState.lockedUntil).getTime();
+      if (Date.now() < lockTime) {
+        const minutesLeft = Math.ceil((lockTime - Date.now()) / 60000);
+        return { success: false, error: `Terlalu banyak percobaan dari perangkat ini. Coba lagi dalam ${minutesLeft} menit.` };
+      } else {
+        ipState.lockedUntil = null;
+        ipState.failedAttempts = 0;
+        ipLockouts[ipKey] = ipState;
+        await writeLockouts(ipLockouts);
+      }
+    }
+  }
+
+  // ── Email-based lockout ──
   const lockouts = await readLockouts();
   const state: LockoutState = lockouts[normalizedEmail] || { failedAttempts: 0, lockedUntil: null };
 
@@ -45,30 +67,55 @@ export async function loginAgent(email: string, password: string): Promise<{ suc
 
   const agent = MOCK_AGENTS.find(a => a.email.toLowerCase() === normalizedEmail);
   const correctPassword = MOCK_PASSWORDS[normalizedEmail];
+  const isCorrect = agent && correctPassword === password;
 
-  if (!agent || correctPassword !== password) {
+  if (!isCorrect) {
+    // Increment failed attempts BEFORE checking threshold
     state.failedAttempts += 1;
+    lockouts[normalizedEmail] = state;
+
+    // Also increment IP counter
+    if (ip) {
+      const ipKey = `ip:${ip}`;
+      const ipState = lockouts[ipKey] || { failedAttempts: 0, lockedUntil: null };
+      ipState.failedAttempts += 1;
+      if (ipState.failedAttempts >= 10) {
+        ipState.lockedUntil = new Date(Date.now() + 15 * 60 * 1000).toISOString();
+      }
+      lockouts[ipKey] = ipState;
+    }
+
     if (state.failedAttempts >= 5) {
-      const lockedUntil = new Date(Date.now() + 15 * 60 * 1000).toISOString();
-      state.lockedUntil = lockedUntil;
-      lockouts[normalizedEmail] = state;
+      // Jangan kunci email — kunci IP saja agar pemilik asli dari IP lain tetap bisa masuk
       await writeLockouts(lockouts);
       return {
         success: false,
-        error: 'Terlalu banyak percobaan masuk yang gagal. Akun Anda dikunci selama 15 menit.'
+        error: 'Terlalu banyak percobaan gagal dari perangkat ini. Akses dari perangkat ini dikunci 15 menit.'
       };
-    } else {
-      lockouts[normalizedEmail] = state;
-      await writeLockouts(lockouts);
-      const sisa = 5 - state.failedAttempts;
+    }
+
+    await writeLockouts(lockouts);
+    const sisa = 5 - state.failedAttempts;
+    return {
+      success: false,
+      error: `Email atau password salah. Sisa percobaan login: ${sisa} kali.`
+    };
+  }
+
+  // Password benar — tapi cek apakah akun sedang terkunci
+  // (menangani kasus: setelah lockout expire tapi belum di-reset)
+  if (state.lockedUntil) {
+    const lockTime = new Date(state.lockedUntil).getTime();
+    if (Date.now() < lockTime) {
+      const minutesLeft = Math.ceil((lockTime - Date.now()) / 60000);
       return {
         success: false,
-        error: `Email atau password salah. Sisa percobaan login: ${sisa} kali.`
+        error: `Akun terkunci. Silakan coba lagi dalam ${minutesLeft} menit.`
       };
     }
   }
 
-  // Login success - Reset lockout state
+  // Login berhasil — reset lockout
   state.failedAttempts = 0;
   state.lockedUntil = null;
   lockouts[normalizedEmail] = state;

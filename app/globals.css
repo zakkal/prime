@@ -258,6 +258,13 @@ body {
   color: var(--white);
 }
 
+/* ==================== PLACEHOLDER LIGHT FONT ==================== */
+input::placeholder {
+  font-weight: 100;
+  opacity: 0.35;
+  letter-spacing: 0.02em;
+}
+
 /* ==================== HIDE DEV OVERLAY ==================== */
 nextjs-portal,
 #nextjs-portal,

@@ -5,13 +5,15 @@ import { useRouter } from 'next/navigation';
 
 interface LoginFormProps {
   action: (formData: FormData) => Promise<{ success: boolean; error?: string }>;
+  initialLockMessage?: string | null;
 }
 
-export default function LoginForm({ action }: LoginFormProps) {
+export default function LoginForm({ action, initialLockMessage }: LoginFormProps) {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [error, setError] = useState<string | null>(initialLockMessage ?? null);
   const [loading, setLoading] = useState(false);
+  const isLocked = !!initialLockMessage;
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,9 +24,7 @@ export default function LoginForm({ action }: LoginFormProps) {
     try {
       const res = await action(formData);
       if (res.success) {
-        // Success redirect
-        router.push('/agent/dashboard');
-        router.refresh();
+        window.location.href = '/agent/dashboard';
       } else {
         setError(res.error || 'Terjadi kesalahan login.');
       }
@@ -50,8 +50,10 @@ export default function LoginForm({ action }: LoginFormProps) {
             type="email"
             name="email"
             required
+            disabled={isLocked}
             placeholder="nama@primeproperty.com"
-            className="bg-[#1A1A1A]/50 border border-white/10 rounded-sm p-3 text-white placeholder-gray-600 focus:border-[#C9A961] focus:ring-1 focus:ring-[#C9A961] focus:outline-none text-sm transition-all"
+            className="bg-[#1A1A1A]/50 border border-white/10 rounded-sm p-3 text-white placeholder-gray-600 focus:border-[#C9A961] focus:ring-1 focus:ring-[#C9A961] focus:outline-none text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed font-extralight tracking-wide"
+            style={{ WebkitBoxShadow: '0 0 0 1000px #1A1A1A inset', WebkitTextFillColor: 'white', fontWeight: 200 }}
           />
         </div>
 
@@ -63,13 +65,16 @@ export default function LoginForm({ action }: LoginFormProps) {
               type={showPassword ? 'text' : 'password'}
               name="password"
               required
+              disabled={isLocked}
               placeholder="••••••••"
-              className="w-full bg-[#1A1A1A]/50 border border-white/10 rounded-sm p-3 pr-10 text-white placeholder-gray-600 focus:border-[#C9A961] focus:ring-1 focus:ring-[#C9A961] focus:outline-none text-sm transition-all"
+              className="w-full bg-[#1A1A1A]/50 border border-white/10 rounded-sm p-3 pr-10 text-white placeholder-gray-600 focus:border-[#C9A961] focus:ring-1 focus:ring-[#C9A961] focus:outline-none text-sm transition-all disabled:opacity-40 disabled:cursor-not-allowed font-extralight tracking-wide"
+              style={{ WebkitBoxShadow: '0 0 0 1000px #1A1A1A inset', WebkitTextFillColor: 'white', fontWeight: 200 }}
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white text-xs cursor-pointer select-none"
+              disabled={isLocked}
+              className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-white text-xs cursor-pointer select-none disabled:opacity-40"
             >
               {showPassword ? '👁️' : '🙈'}
             </button>
@@ -79,10 +84,10 @@ export default function LoginForm({ action }: LoginFormProps) {
         {/* Submit */}
         <button
           type="submit"
-          disabled={loading}
+          disabled={loading || isLocked}
           className="btn-gold py-4 px-6 rounded-sm text-xs mt-2 disabled:opacity-50 disabled:cursor-not-allowed uppercase font-black tracking-widest cursor-pointer"
         >
-          {loading ? 'Menghubungkan...' : 'Masuk Portal Agent'}
+          {isLocked ? 'Akun Terkunci — Tunggu Timer' : loading ? 'Menghubungkan...' : 'Masuk Portal Agent'}
         </button>
       </form>
     </div>

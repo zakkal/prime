@@ -411,70 +411,71 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
       </section>
 
       {/* ================================================================
-          LAYANAN VIP - High-end bespoke real estate agency services
+          MENGAPA PRIME PROPERTY — Value Proposition Section
       ================================================================ */}
-      <section id="layanan" className="py-16 px-6 relative border-t border-white/5 bg-gradient-to-b from-[#0D0D0D] via-[#120F0D] to-[#0D0D0D]">
+      <section id="layanan" className="py-24 px-6 relative border-t border-white/5 bg-gradient-to-b from-[#0D0D0D] via-[#120F0D] to-[#0D0D0D]">
         <div className="max-w-7xl mx-auto">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            
-            {/* Left Column: text */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
-              <span className="text-[11px] font-bold text-[#C9A961] tracking-[0.3em] uppercase flex items-center gap-3">
-                <span className="h-px w-8 bg-[#C9A961]" />
-                Layanan VIP Brokerage
-              </span>
-              
-              <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
-                Standar Layanan<br />
-                <span className="text-gold-gradient">Kelas Premium</span>
-              </h2>
-              
-              <p className="text-xs text-gray-400 font-light leading-relaxed">
-                Kami melayani transaksi properti premium dengan komitmen kerahasiaan penuh, penasihat hukum internal, dan kepastian akurasi fisik unit. Setiap investor berhak mendapatkan pengalaman VIP tanpa kendala.
-              </p>
 
-              <div className="mt-4">
-                <Link href="/contact" className="btn-gold px-8 py-3.5 rounded-xl text-[10px] font-black tracking-widest uppercase inline-block">
-                  Konsultasi VIP Gratis
-                </Link>
-              </div>
-            </div>
+          {/* Section Header */}
+          <div className="flex flex-col items-center text-center gap-4 mb-16">
+            <span className="text-[11px] font-bold text-[#C9A961] tracking-[0.3em] uppercase flex items-center gap-3">
+              <span className="h-px w-8 bg-[#C9A961]" />
+              Proposisi Nilai
+              <span className="h-px w-8 bg-[#C9A961]" />
+            </span>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-white leading-tight">
+              Mengapa Memilih <span className="text-gold-gradient">Prime Property</span>
+            </h2>
+            <p className="text-sm text-gray-500 max-w-2xl leading-relaxed font-light">
+              Di pasar properti premium yang penuh distorsi informasi, Prime Property hadir sebagai satu-satunya institusi kurasi yang menempatkan akurasi, kepercayaan, dan pengalaman klien sebagai standar yang tidak dapat ditawar.
+            </p>
+          </div>
 
-            {/* Right Column: features cards grid */}
-            <div className="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                {
-                  title: 'Private Viewing VIP',
-                  desc: 'Penjadwalan survei lokasi privat eksklusif dengan pendampingan langsung oleh Senior Consultant kami.',
-                  icon: '👑'
-                },
-                {
-                  title: 'Presisi Legalitas',
-                  desc: 'Pengecekan keabsahan SHM/HGB dan sertifikat dimensi fisik tanah dengan transparansi total.',
-                  icon: '📜'
-                },
-                {
-                  title: 'Simulasi Keuangan',
-                  desc: 'Penyusunan proposal penawaran harga terbaik, simulasi KPR/KPT, dan struktur pembayaran fleksibel.',
-                  icon: '📊'
-                },
-                {
-                  title: 'Satu Pintu Layanan',
-                  desc: 'Dari pemilihan unit hingga serah terima kunci dan pengurusan akta notaris dibantu tim ahli.',
-                  icon: '🔑'
-                }
-              ].map((serv, index) => (
-                <div key={index} className="glass-card border border-white/5 rounded-2xl p-6 hover:border-[#C9A961]/30 transition duration-300">
-                  <div className="h-10 w-10 rounded-lg bg-[#C9A961]/10 flex items-center justify-center text-xl border border-[#C9A961]/25 mb-4">
-                    {serv.icon}
-                  </div>
-                  <h4 className="font-bold text-sm text-white mb-2">{serv.title}</h4>
-                  <p className="text-xs text-gray-500 font-light leading-relaxed">{serv.desc}</p>
+          {/* Keunggulan Cards — 4 cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {[
+              {
+                icon: '◎',
+                judul: 'Kurasi Inventori Premium',
+                deskripsi: 'Setiap unit yang tampil di portal kami telah melewati proses seleksi ketat berbasis verifikasi fisik lapangan dan pengecekan legalitas berlapis. Kami tidak menampilkan properti yang belum memenuhi standar kualitas Prime — tanpa kompromi, tanpa pengecualian.',
+              },
+              {
+                icon: '⬡',
+                judul: 'Presisi Legalitas Terverifikasi',
+                deskripsi: 'Akurasi dimensi tanah dan bangunan kami dijamin hingga 99,8% melalui pengukuran bersertifikat. Setiap detail SHM, HGB, dan IMB divalidasi secara menyeluruh sebelum unit dipresentasikan kepada klien — karena investasi yang aman dimulai dari dokumen yang bersih.',
+              },
+              {
+                icon: '◈',
+                judul: 'Privasi & Diskresi Mutlak',
+                deskripsi: 'Identitas, preferensi, dan strategi investasi klien kami dilindungi dengan protokol kerahasiaan tertinggi. Tidak ada data yang dibagikan kepada pihak ketiga tanpa persetujuan eksplisit — sebuah komitmen yang kami jaga sejak hari pertama beroperasi.',
+              },
+              {
+                icon: '✦',
+                judul: 'Transparansi Data Real-Time',
+                deskripsi: 'Status ketersediaan unit, harga penawaran terkini, dan seluruh spesifikasi fisik properti diperbarui secara real-time oleh tim agen internal kami. Klien dan investor dapat mengambil keputusan berdasarkan informasi yang akurat, bukan asumsi atau data usang.',
+              },
+            ].map((card, i) => (
+              <div key={i} className="glass-card border border-white/5 rounded-2xl p-7 hover:border-[#C9A961]/30 hover:shadow-[0_0_32px_rgba(201,169,97,0.08)] transition-all duration-400 flex flex-col gap-5 group">
+                <div className="h-12 w-12 rounded-xl bg-[#C9A961]/10 border border-[#C9A961]/20 flex items-center justify-center text-[#C9A961] text-2xl font-black group-hover:bg-[#C9A961]/20 transition-colors">
+                  {card.icon}
                 </div>
-              ))}
-            </div>
+                <div>
+                  <h4 className="font-black text-white text-sm mb-3 leading-snug">{card.judul}</h4>
+                  <p className="text-xs text-gray-500 font-light leading-relaxed">{card.deskripsi}</p>
+                </div>
+              </div>
+            ))}
+          </div>
 
+          {/* Bottom CTA strip */}
+          <div className="glass border border-[#C9A961]/15 rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex flex-col gap-2 text-center md:text-left">
+              <p className="text-white font-serif font-bold text-xl md:text-2xl">Siap Memulai Perjalanan Investasi Anda?</p>
+              <p className="text-xs text-gray-500 font-light">Konsultasikan kebutuhan properti Anda secara pribadi dengan Senior Consultant kami — tanpa biaya, tanpa kewajiban.</p>
+            </div>
+            <Link href="/contact" className="btn-gold px-10 py-4 rounded-xl text-[10px] font-black tracking-widest uppercase whitespace-nowrap shadow-lg flex-shrink-0">
+              Jadwalkan Konsultasi VIP
+            </Link>
           </div>
 
         </div>
