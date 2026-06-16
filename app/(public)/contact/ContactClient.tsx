@@ -86,7 +86,7 @@ export default function ContactClient({ profile }: { profile: SiteProfile }) {
   };
 
   return (
-    <div className="bg-[#0D0D0D] min-h-screen py-32 px-6 md:px-12 relative overflow-hidden noise-bg">
+    <div className="bg-[#0D0D0D] min-h-screen py-16 md:py-32 px-6 md:px-12 relative overflow-hidden noise-bg">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(201,169,97,0.05),transparent)]" />
       <div className="absolute top-1/4 right-1/10 w-96 h-96 bg-[#C9A961]/3 rounded-full blur-3xl animate-float" />
 
@@ -101,7 +101,7 @@ export default function ContactClient({ profile }: { profile: SiteProfile }) {
             Hubungi Kami
             <span className="h-px w-8 bg-[#C9A961]" />
           </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
             Hubungi <span className="text-gold-gradient">{profile.nama_perusahaan}</span>
           </h1>
           <div className="flex items-center gap-3 w-32 justify-center mt-2">

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function AboutPage() {
   return (
-    <div className="bg-[#0D0D0D] min-h-screen py-32 px-6 md:px-12 relative overflow-hidden noise-bg">
+    <div className="bg-[#0D0D0D] min-h-screen py-16 md:py-32 px-6 md:px-12 relative overflow-hidden noise-bg">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_60%_at_50%_30%,rgba(201,169,97,0.05),transparent)]" />
       <div className="absolute top-1/3 left-1/10 w-96 h-96 bg-[#C9A961]/3 rounded-full blur-3xl animate-float" />
       <div className="absolute top-32 left-12 w-16 h-16 border-l border-t border-[#C9A961]/25" />
@@ -17,7 +17,7 @@ export default function AboutPage() {
             Profil Perusahaan
             <span className="h-px w-8 bg-[#C9A961]" />
           </span>
-          <h1 className="text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-serif font-bold text-white leading-tight">
             Tentang <span className="text-gold-gradient">Prime Property</span>
           </h1>
           <div className="flex items-center gap-3 w-32 justify-center mt-2">
@@ -31,9 +31,9 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-24">
           <div className="flex flex-col gap-6 animate-slide-in-left">
             <span className="text-[10px] font-extrabold tracking-widest text-[#C9A961] uppercase">Established Agency · Medan</span>
-            <h2 className="text-3xl font-serif font-bold text-white leading-tight">
-              Mendefinisikan Ulang Standar <br />
-              <span className="text-gold-gradient">Properti Premium di Medan</span>
+            <h2 className="text-2xl md:text-3xl font-serif font-bold text-white leading-tight">
+              Mendefinisikan Ulang Standar
+              <span className="text-gold-gradient block mt-1">Properti Premium di Medan</span>
             </h2>
             <p className="text-sm text-gray-400 leading-relaxed font-light">
               Prime Property hadir sebagai respons terhadap kebutuhan pasar properti Medan yang semakin sophisticated — kalangan investor, pengusaha, dan keluarga mapan yang tidak sekadar mencari hunian, melainkan sebuah instrumen investasi yang terukur, transparan, dan berdaya ungkit tinggi. Sejak hari pertama beroperasi, kami membangun fondasi kepercayaan di atas satu prinsip tunggal: setiap keputusan transaksi harus didukung oleh data fisik yang presisi, legalitas yang tak terbantahkan, dan layanan konsultatif yang menjunjung privasi mutlak klien.

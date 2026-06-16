@@ -26,7 +26,7 @@ export default async function PropertyDetailPage({ params }: PageProps) {
   const formatDecimal = (num: number) => num.toString().replace('.', ',');
 
   return (
-    <div className="min-h-screen bg-[#0D0D0D] py-32 px-4 md:px-12 relative flex flex-col justify-center items-center noise-bg">
+    <div className="min-h-screen bg-[#0D0D0D] py-16 md:py-32 px-4 md:px-12 relative flex flex-col justify-center items-center noise-bg">
       {/* Decorative Orbs */}
       <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-[#C9A961]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#C9A961]/3 rounded-full blur-3xl animate-float" />

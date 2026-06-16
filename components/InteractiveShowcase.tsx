@@ -36,7 +36,9 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
   const [selectedType, setSelectedType] = useState<string>('All');
   const [selectedKawasan, setSelectedKawasan] = useState<string>('All');
   const [selectedSiap, setSelectedSiap] = useState<string>('All');
-  const [priceRange, setPriceRange] = useState<number>(999000000000); // 999 Billion max default
+  const [priceRange, setPriceRange] = useState<number>(999000000000);
+  const [showTipeMenu, setShowTipeMenu] = useState(false);
+  const [showSiapMenu, setShowSiapMenu] = useState(false);
 
   // Extract unique Kawasan lists for filtering
   const kawasanList = useMemo(() => {
@@ -117,7 +119,7 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
                   </span>
                 ))}
               </span>
-              <span className="block text-4xl sm:text-6xl xl:text-7xl font-black leading-tight tracking-tight text-gold-gradient">
+              <span className="block text-4xl sm:text-5xl xl:text-7xl font-black leading-tight tracking-tight text-gold-gradient break-words">
                 {siteProfile.tagline_baris2.split('').map((char, i) => (
                   <span
                     key={i}
@@ -147,7 +149,7 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
               </a>
             </div>
 
-            <div className="flex items-center gap-8 pt-6 border-t border-white/5 max-w-md mt-2">
+            <div className="flex flex-wrap items-center gap-8 pt-6 border-t border-white/5 max-w-md mt-2">
               <div>
                 <p className="text-2xl font-black text-white">
                   <Counter target={initialProperties.length} suffix="+" />
@@ -269,42 +271,87 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
             </p>
           </div>
 
-          {/* Quick Filter Pill Badges */}
-          <div className="flex flex-wrap gap-2.5 mb-8 text-xs border-b border-white/5 pb-6">
-            <span className="text-[10px] uppercase text-gray-500 font-bold tracking-wider self-center mr-2">Tipe:</span>
-            {['All', 'Villa', 'Ruko'].map(t => (
-              <button
-                key={t}
-                onClick={() => setSelectedType(t)}
-                className={`px-4 py-2 rounded-full font-black tracking-widest text-[9px] uppercase border cursor-pointer transition-all ${
-                  selectedType === t 
-                    ? 'bg-[#C9A961] text-[#1A1A1A] border-[#C9A961]' 
-                    : 'bg-transparent border-white/10 text-gray-400 hover:text-white'
-                }`}
-              >
-                {t === 'All' ? 'Semua' : t}
-              </button>
-            ))}
+          {/* Quick Filter Dropdown Badges */}
+          <div className="flex flex-wrap gap-3 mb-8 border-b border-white/5 pb-6">
 
-            <span className="text-[10px] uppercase text-gray-500 font-bold tracking-wider self-center ml-4 mr-2">Kesiapan:</span>
-            {[
-              { id: 'All', label: 'Semua' },
-              { id: 'siap_huni', label: 'Siap Huni' },
-              { id: 'siap_kosong', label: 'Siap Kosong' },
-              { id: 'siap_huni_renovasi', label: 'Siap Huni (Renovasi)' }
-            ].map(s => (
+            {/* Tipe dropdown */}
+            <div className="relative">
               <button
-                key={s.id}
-                onClick={() => setSelectedSiap(s.id)}
-                className={`px-4 py-2 rounded-full font-black tracking-widest text-[9px] uppercase border cursor-pointer transition-all ${
-                  selectedSiap === s.id 
-                    ? 'bg-[#C9A961] text-[#1A1A1A] border-[#C9A961]' 
-                    : 'bg-transparent border-white/10 text-gray-400 hover:text-white'
+                onClick={() => { setShowTipeMenu(!showTipeMenu); setShowSiapMenu(false); }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-black tracking-widest text-[9px] uppercase border cursor-pointer transition-all ${
+                  selectedType !== 'All'
+                    ? 'bg-[#C9A961] text-[#1A1A1A] border-[#C9A961]'
+                    : 'bg-transparent border-white/20 text-gray-300 hover:text-white hover:border-white/40'
                 }`}
               >
-                {s.label}
+                Tipe: {selectedType === 'All' ? 'Semua' : selectedType}
+                <span className={`transition-transform duration-200 ${showTipeMenu ? 'rotate-180' : ''}`}>▾</span>
               </button>
-            ))}
+              {showTipeMenu && (
+                <div className="absolute top-full mt-2 left-0 z-50 bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[120px]">
+                  {['All', 'Villa', 'Ruko'].map(t => (
+                    <button
+                      key={t}
+                      onClick={() => { setSelectedType(t); setShowTipeMenu(false); }}
+                      className={`w-full text-left px-4 py-2.5 text-[10px] font-black uppercase tracking-widest transition-colors ${
+                        selectedType === t
+                          ? 'bg-[#C9A961] text-[#1A1A1A]'
+                          : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                      }`}
+                    >
+                      {t === 'All' ? 'Semua' : t}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Kesiapan dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => { setShowSiapMenu(!showSiapMenu); setShowTipeMenu(false); }}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-black tracking-widest text-[9px] uppercase border cursor-pointer transition-all ${
+                  selectedSiap !== 'All'
+                    ? 'bg-[#C9A961] text-[#1A1A1A] border-[#C9A961]'
+                    : 'bg-transparent border-white/20 text-gray-300 hover:text-white hover:border-white/40'
+                }`}
+              >
+                Kesiapan: {selectedSiap === 'All' ? 'Semua' : selectedSiap.replace(/_/g, ' ')}
+                <span className={`transition-transform duration-200 ${showSiapMenu ? 'rotate-180' : ''}`}>▾</span>
+              </button>
+              {showSiapMenu && (
+                <div className="absolute top-full mt-2 left-0 z-50 bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[160px]">
+                  {[
+                    { id: 'All', label: 'Semua' },
+                    { id: 'siap_huni', label: 'Siap Huni' },
+                    { id: 'siap_kosong', label: 'Siap Kosong' },
+                    { id: 'siap_huni_renovasi', label: 'Renovasi' }
+                  ].map(s => (
+                    <button
+                      key={s.id}
+                      onClick={() => { setSelectedSiap(s.id); setShowSiapMenu(false); }}
+                      className={`w-full text-left px-4 py-2.5 text-[10px] font-black uppercase tracking-widest transition-colors ${
+                        selectedSiap === s.id
+                          ? 'bg-[#C9A961] text-[#1A1A1A]'
+                          : 'text-gray-400 hover:bg-white/5 hover:text-white'
+                      }`}
+                    >
+                      {s.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Reset button — muncul kalau ada filter aktif */}
+            {(selectedType !== 'All' || selectedSiap !== 'All') && (
+              <button
+                onClick={() => { setSelectedType('All'); setSelectedSiap('All'); }}
+                className="px-4 py-2 rounded-full text-[9px] font-black uppercase tracking-widest border border-[#B33A3A]/40 text-[#B33A3A] hover:bg-[#B33A3A]/10 transition-all cursor-pointer"
+              >
+                ✕ Reset
+              </button>
+            )}
           </div>
 
           {/* Property Cards Grid */}
@@ -431,28 +478,23 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
             </p>
           </div>
 
-          {/* Keunggulan Cards — 4 cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {/* Keunggulan Cards — 3 pilar */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {[
               {
-                icon: '◎',
-                judul: 'Kurasi Inventori Premium',
-                deskripsi: 'Setiap unit yang tampil di portal kami telah melewati proses seleksi ketat berbasis verifikasi fisik lapangan dan pengecekan legalitas berlapis. Kami tidak menampilkan properti yang belum memenuhi standar kualitas Prime — tanpa kompromi, tanpa pengecualian.',
+                icon: '✦',
+                judul: 'Transparansi Data Mutlak',
+                deskripsi: 'Setiap unit yang kami kurasi dilengkapi data fisik terverifikasi, status legalitas yang bersih, dan harga penawaran yang jujur — tanpa markup tersembunyi, tanpa distorsi informasi yang merugikan investor.',
               },
               {
-                icon: '⬡',
-                judul: 'Presisi Legalitas Terverifikasi',
-                deskripsi: 'Akurasi dimensi tanah dan bangunan kami dijamin hingga 99,8% melalui pengukuran bersertifikat. Setiap detail SHM, HGB, dan IMB divalidasi secara menyeluruh sebelum unit dipresentasikan kepada klien — karena investasi yang aman dimulai dari dokumen yang bersih.',
+                icon: '◎',
+                judul: 'Portofolio Lokasi Strategis',
+                deskripsi: 'Inventori kami mencakup kawasan paling prospektif di Medan — dari koridor bisnis Krakatau hingga enclave premium Cemara Asri — dipilih berdasarkan potensi apresiasi nilai dan aksesibilitas kelas satu.',
               },
               {
                 icon: '◈',
-                judul: 'Privasi & Diskresi Mutlak',
-                deskripsi: 'Identitas, preferensi, dan strategi investasi klien kami dilindungi dengan protokol kerahasiaan tertinggi. Tidak ada data yang dibagikan kepada pihak ketiga tanpa persetujuan eksplisit — sebuah komitmen yang kami jaga sejak hari pertama beroperasi.',
-              },
-              {
-                icon: '✦',
-                judul: 'Transparansi Data Real-Time',
-                deskripsi: 'Status ketersediaan unit, harga penawaran terkini, dan seluruh spesifikasi fisik properti diperbarui secara real-time oleh tim agen internal kami. Klien dan investor dapat mengambil keputusan berdasarkan informasi yang akurat, bukan asumsi atau data usang.',
+                judul: 'Konsultasi VIP Eksklusif',
+                deskripsi: 'Setiap klien mendapatkan pendampingan personal dari konsultan senior kami, mulai dari seleksi unit, due diligence legalitas, hingga negosiasi dan serah terima kunci — dengan diskresi dan integritas penuh.',
               },
             ].map((card, i) => (
               <div key={i} className="glass-card border border-white/5 rounded-2xl p-7 hover:border-[#C9A961]/30 hover:shadow-[0_0_32px_rgba(201,169,97,0.08)] transition-all duration-400 flex flex-col gap-5 group">
