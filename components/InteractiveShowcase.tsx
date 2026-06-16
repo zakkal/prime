@@ -272,7 +272,7 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
           </div>
 
           {/* Quick Filter Dropdown Badges */}
-          <div className="flex flex-wrap gap-3 mb-8 border-b border-white/5 pb-6">
+          <div className="flex flex-wrap gap-3 mb-8 border-b border-white/5 pb-6" onMouseLeave={() => { setShowTipeMenu(false); setShowSiapMenu(false); }}>
 
             {/* Tipe dropdown */}
             <div className="relative">
@@ -285,10 +285,10 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
                 }`}
               >
                 Tipe: {selectedType === 'All' ? 'Semua' : selectedType}
-                <span className={`transition-transform duration-200 ${showTipeMenu ? 'rotate-180' : ''}`}>▾</span>
+                <span className={`transition-transform duration-200 text-[8px] ${showTipeMenu ? 'rotate-180' : 'rotate-0'}`}>▼</span>
               </button>
               {showTipeMenu && (
-                <div className="absolute top-full mt-2 left-0 z-50 bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[120px]">
+                <div className="absolute top-full mt-2 left-0 z-[200] bg-[#1A1A1A] border border-[#C9A961]/20 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden min-w-[120px]">
                   {['All', 'Villa', 'Ruko'].map(t => (
                     <button
                       key={t}
@@ -317,10 +317,10 @@ export default function InteractiveShowcase({ initialProperties, siteProfile }: 
                 }`}
               >
                 Kesiapan: {selectedSiap === 'All' ? 'Semua' : selectedSiap.replace(/_/g, ' ')}
-                <span className={`transition-transform duration-200 ${showSiapMenu ? 'rotate-180' : ''}`}>▾</span>
+                <span className={`transition-transform duration-200 text-[8px] ${showSiapMenu ? 'rotate-180' : 'rotate-0'}`}>▼</span>
               </button>
               {showSiapMenu && (
-                <div className="absolute top-full mt-2 left-0 z-50 bg-[#1A1A1A] border border-white/10 rounded-xl shadow-2xl overflow-hidden min-w-[160px]">
+                <div className="absolute top-full mt-2 left-0 z-[200] bg-[#1A1A1A] border border-[#C9A961]/20 rounded-xl shadow-[0_8px_32px_rgba(0,0,0,0.6)] overflow-hidden min-w-[160px]">
                   {[
                     { id: 'All', label: 'Semua' },
                     { id: 'siap_huni', label: 'Siap Huni' },
